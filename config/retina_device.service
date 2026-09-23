@@ -1,0 +1,15 @@
+[Unit]
+Description=Retinal Imaging Device
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/icap123/retina_device/main.py
+WorkingDirectory=/home/icap123/retina_device
+Restart=on-failure
+RestartSec=5
+User=icap123
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
